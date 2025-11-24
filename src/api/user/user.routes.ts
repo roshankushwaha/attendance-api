@@ -5,7 +5,7 @@ import { jwt } from 'hono/jwt'
 export const userRoutes = new Hono()
 
 userRoutes.use('/*', jwt({
-    secret: process.env.JWT_SECRET!,
+    secret: "8f3a1e2b9c7d4fcbad9923123adaf01092b8bc3944ff7782cace0a87e9e9cc55",
     
 }))
 

@@ -19,7 +19,7 @@ export async function generateAccessToken(sub: string, role: string) {
             iat: now,
             exp: now + 60 * 15,   // ⏳ 15 mins
         },
-        process.env.JWT_SECRET!
+        "8f3a1e2b9c7d4fcbad9923123adaf01092b8bc3944ff7782cace0a87e9e9cc55"
     );
 }
 export async function generateRefreshToken(sub: string, role: string) {
@@ -32,7 +32,7 @@ export async function generateRefreshToken(sub: string, role: string) {
             iat: now,
             exp: now + 60 * 60 * 24 * 7,  // ⏳ 7 days
         },
-        process.env.JWT_REFRESH_SECRET!
+        "8f3a1e2b9c7d4fcbad9923123adaf01092b8bc3944ff7782cace0a87e9e9cc55"
     );
 }
 

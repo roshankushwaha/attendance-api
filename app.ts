@@ -6,23 +6,28 @@ import { attendanceRoutes } from "@/api/attendance/attendance.routes";
 import { authRoutes } from "@/api/auth/auth.routes";
 import "dotenv/config";
 import { serve } from "@hono/node-server";
+
 const app = new Hono();
-const api = app.basePath('/api')
+const api = app.basePath("/api");
 
-api.get('/', c => c.text('Hello bun!'))
+// Test endpoint
+api.get("/", (c) => c.text("Hello bun!"));
 
-// Middlewares
+// GLOBAL MIDDLEWARES
 api.use("*", cors());
 api.use("*", prettyJSON());
 
-// REGISTER ROUTES
+// ROUTES
 api.route("/auth", authRoutes);
-api.route('/user', userRoutes);
-api.route('/attendance', attendanceRoutes);
+api.route("/user", userRoutes);
+api.route("/attendance", attendanceRoutes);
 
+// PORT FIX FOR RENDER
+const port = Number(process.env.PORT) || 3000;
 
 serve({
     fetch: app.fetch,
-    port: 3000,
-})
-console.log(`hono server is running on port: 3000`)
+    port,
+});
+
+console.log(`hono server is running on port: ${port}`);

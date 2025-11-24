@@ -27921,8 +27921,9 @@ api2.use("*", prettyJSON());
 api2.route("/auth", authRoutes);
 api2.route("/user", userRoutes);
 api2.route("/attendance", attendanceRoutes);
+var port = Number(process.env.PORT) || 3000;
 serve({
   fetch: app.fetch,
-  port: 3000
+  port
 });
-console.log(`hono server is running on port: 3000`);
+console.log(`hono server is running on port: ${port}`);

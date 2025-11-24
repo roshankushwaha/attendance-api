@@ -1,0 +1,50 @@
+# Node modules
+node_modules/
+
+# Bun
+bun.lockb
+
+# Deno
+deno.lock
+.deno/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+build/
+.out/
+.esbuild/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+bun-debug.log*
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.pid
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# TypeScript
+*.tsbuildinfo
+
+# Editor folders
+.vscode/
+.idea/
+*.swp
+
+# Cache
+.cache/
+.next/
+.vercel/
